@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="clock">
+        <div class="time">
+            <span>12</span>
+            <span></span>
+            <span>3</span>
+            <span>6</span>
+            <span>9</span>
+            <span></span>
+        </div>
+        <div class="hours-container">
+            <div class="hours"></div>
+        </div>
+        <div class="minutes-container">
+            <div class="minutes"></div>
+        </div>
+        <div class="seconds-container">
+            <div class="seconds"></div>
+        </div>
+    </div>
+</body>
+<script>
+    const deg = 6;
+    const secondHand = document.querySelector('.seconds-container');
+    const minsHand = document.querySelector('.minutes-container');
+    const hourHand = document.querySelector('.hours-container');
+
+    setInterval(() => {
+        let day = new Date();
+        let hh = day.getHours() * 30;
+        let mm = day.getMinutes() * deg;
+        let ss = day.getSeconds() * deg;
+
+        hourHand.style.transform = `rotateZ(${(hh) + (mm / 12)}deg)`
+        minsHand.style.transform = `rotateZ(${mm}deg)`
+        secondHand.style.transform = `rotateZ(${ss}deg)`
+    });
+</script>
+</html>

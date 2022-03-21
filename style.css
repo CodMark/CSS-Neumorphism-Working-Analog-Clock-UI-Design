@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #111;
+}
+
+.clock {
+    width: 14rem;
+    height: 14rem;
+    border-radius: 50%;
+    position: relative;
+}
+.clock::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background: #fff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    border: 4px solid #313131;
+}
+.time {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.time::before {
+    content: "";
+    width: 11rem;
+    height: 10rem;
+    position: absolute;
+    background: #111;
+    border-radius: 37%;
+    z-index: 1;
+}
+
+.time span {
+    font-size: 25px;
+    font-weight: 600;
+    color: white;
+    font-family: cursive;
+    border-radius: 12px;
+}
+.time span:nth-child(1) {
+    position: absolute;
+    top: 0px;
+}
+.time span:nth-child(2) {
+    width: 13rem;
+    height: 4px;
+    background: #beff4b;
+    transform: rotate(133deg);
+    position: absolute;
+}
+
+.time span:nth-child(3) {
+    position: absolute;
+    right: 4px;
+}
+
+.time span:nth-child(4) {
+    position: absolute;
+    bottom: 4px;
+}
+
+.time span:nth-child(5) {
+    position: absolute;
+    left: 4px;
+}
+
+.time span:nth-child(6) {
+    position: absolute;
+    width: 4px;
+    height: 13rem;
+    background: #beff4b;
+    transform: rotate(133deg);
+}
+
+.hours-container,
+.minutes-container,
+.seconds-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.hours {
+    width: 10px;
+    height: 6rem;
+    background: linear-gradient(180deg, #00ffde, transparent);
+    border-radius: 23px 23px 10px 10px;
+    position: absolute;
+    left: 48%;
+    top: 24%;
+    transform-origin: 50% 100%;
+    z-index: 2;
+}
+
+
+.minutes{
+    width: 10px;
+    height: 6.5rem;
+    background: linear-gradient(180deg, #527dff, transparent);
+    border-radius: 23px 23px 10px 10px;
+    position: absolute;
+    left: 48%;
+    top: 18%;
+    transform-origin: 50% 100%;
+    z-index: 3;
+}
+
+.seconds{
+    width: 10px;
+    height: 7.3rem;
+    background: linear-gradient(180deg, #ff0067, transparent);
+    border-radius: 23px 23px 10px 10px;
+    position: absolute;
+    left: 48%;
+    top: 15%;
+    transform-origin: 50% 100%;
+    z-index: 4;
+}
